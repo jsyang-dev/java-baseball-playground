@@ -18,18 +18,27 @@ class StringTest {
     @Test
     void split1() {
         // when
-        String[] values = "1,2".split(",");
+        String[] results = "1,2".split(",");
 
         // then
-        assertThat(values).containsExactly("1", "2");
+        assertThat(results).containsExactly("1", "2");
     }
 
     @Test
     void split2() {
         // when
-        String[] values = "1".split(",");
+        String[] results = "1".split(",");
 
         // then
-        assertThat(values).contains("1");
+        assertThat(results).contains("1");
+    }
+
+    @Test
+    void substring() {
+        // when
+        String result = "(1,2)".substring(1, 4);
+
+        // then
+        assertThat(result).isEqualTo("1,2");
     }
 }
